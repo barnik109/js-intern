@@ -1,26 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Square</title>
-<meta charset="UTF-8">
-<script>
-function init() {
- ctx = document.getElementById('canvas').getContext('2d');
- ctx.fillStyle = "#E34C26";
- ctx.beginPath();
- ctx.moveTo(50,50);
- ctx.lineTo(100,50);
- ctx.lineTo(100,100);
- ctx.lineTo(50,100);
- ctx.closePath();
- ctx.fill();
- ctx.fillText("JGEC",70,70);
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo of HTML5</title>
+    <style>
+        footer {
+            display:block; 
+            border-top: 1px 
+        solid orange; 
+        margin: 10px; 
+        font-family: 
+        "Trebuchet MS", Arial, Helvetica, 
+        sans-serif; 
+        font-weight: bold;
+         }
+        article {
+            display:block; font-family: 
+        Georgia, "Times New Roman", Times, serif; 
+        margin: 5px;
+         }
+        </style>
+        <script language="JavaScript">
+       var cxt;
+var fvalue=1;
+var ftfam = "65px 'Gill Sans Ultra Bold', sans-serif";
+function drit()
+{
+    cxt=document.getElementById('canvas').getContext('2d');
+    cxt.font=ftfam;
+    cxt.save();
+    dlogo();
 }
-</script>
+function dlogo()
+{
+ var oty=80;
+    cxt.restore();
+    cxt.save();
+    cxt.clearRect(0,0,600,400);
+    cxt.scale(fvalue,fvalue);
+    cxt.fillText("HTML",31,60);
+    cxt.translate(0,oty);
+    cxt.fillStyle = "#E34C26"; 
+cxt.beginPath(); 
+cxt.moveTo(39, 250); 
+cxt.lineTo(17, 0); 
+cxt.lineTo(262, 0); 
+cxt.lineTo(239, 250);
+cxt.lineTo(139, 278);
+cxt.closePath();
+cxt.fill();
+
+cxt.fillStyle = "#F06529"; 
+cxt.beginPath(); 
+cxt.moveTo(139, 257); 
+cxt.lineTo(220, 234); 
+cxt.lineTo(239, 20); 
+cxt.lineTo(139, 20); 
+cxt.closePath(); 
+cxt.fill();
+
+cxt.fillStyle = "#EBEBEB"; 
+cxt.beginPath(); 
+cxt.moveTo(139, 113);
+cxt.lineTo(98, 113); 
+cxt.lineTo(96, 82); 
+cxt.lineTo(139, 82); 
+cxt.lineTo(139, 51); 
+cxt.lineTo(62, 51);
+cxt.lineTo(70, 144);
+cxt.lineTo(139, 144);
+cxt.closePath(); 
+cxt.fill(); 
+cxt.beginPath(); 
+cxt.moveTo(139, 193);
+cxt.lineTo(105, 184);
+cxt.lineTo(103, 159); 
+cxt.lineTo(72, 159); 
+cxt.lineTo(76, 207); 
+cxt.lineTo(139, 225); 
+cxt.closePath(); 
+cxt.fill();
+
+cxt.fillStyle = "#FFFFFF"; 
+cxt.beginPath(); 
+cxt.moveTo(139, 113); 
+cxt.lineTo(139, 144); 
+cxt.lineTo(177, 144);
+cxt.lineTo(173, 184); 
+cxt.lineTo(139, 193); 
+cxt.lineTo(139, 225); 
+cxt.lineTo(202, 207); 
+cxt.lineTo(210, 113); 
+cxt.closePath(); 
+cxt.fill();
+
+cxt.beginPath(); 
+cxt.moveTo(139, 51); 
+cxt.lineTo(139, 82); 
+cxt.lineTo(213, 82);
+cxt.lineTo(216, 51); 
+cxt.closePath(); 
+cxt.fill();
+}
+function csc(val)
+{
+    fvalue=val/100;
+    dlogo();
+}
+
+        </script>
 </head>
-<body onLoad="init();">
-<canvas id="canvas" width="600" height="400">
-Your browser does not support the canvas element.
+<body onLoad="drit();">
+    <canvas id="canvas" width="600" 
+height="400">
+Your browser does not support canavs element.!!!
 </canvas>
+<article>
+    Scale percentage: <input id="slide" 
+    type="range" min="0" max="100" 
+    value="100" onChange="changescale(this.
+    value)" step="10"/>
+    </article>
+    <footer>Built by Barnik Maity</footer>
 </body>
 </html>
